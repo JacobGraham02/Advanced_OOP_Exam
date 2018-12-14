@@ -11,12 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="817.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
-      <ChoiceBox layoutX="48.0" layoutY="79.0" prefHeight="51.0" prefWidth="236.0" />
-      <Text layoutX="48.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Brand" textAlignment="CENTER" wrappingWidth="236.00000232458115">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
+      <ChoiceBox fx:id="brandChoice" layoutX="50.0" layoutY="14.0" prefHeight="51.0" prefWidth="236.0" />
       <TableView fx:id="carsTable" layoutX="50.0" layoutY="137.0" prefHeight="293.0" prefWidth="718.0">
         <columns>
           <TableColumn fx:id="yearCol" prefWidth="75.0" text="Year" />
@@ -36,7 +31,12 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Button fx:id="sellButton" layoutX="356.0" layoutY="469.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="106.0" text="Sell Car">
+      <Button fx:id="sellButton" layoutX="356.0" layoutY="469.0" mnemonicParsing="false" onAction="#sellButtonPressed" prefHeight="51.0" prefWidth="106.0" text="Sell Car">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="brandSelectButton" layoutX="50.0" layoutY="74.0" mnemonicParsing="false" onAction="#brandselectPressed" prefHeight="51.0" prefWidth="236.0" text="Select Brand">
          <font>
             <Font size="18.0" />
          </font>

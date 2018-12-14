@@ -19,6 +19,7 @@ public class CarLot {
         if (brand == "All Brands")
         {
             TreeSet<Car> list = new TreeSet<>();
+            int i = 0;
             for(String str: carLot.keySet())
             {
                 list.addAll(carLot.get(str));

@@ -18,9 +18,9 @@ public class Car implements Comparable<Car>{
     public int getYear() {
         return year;
     }
-
+//(LocalDate.now().getYear()+1)
     public void setYear(int year) {
-        if (year >= 1902 && year < LocalDate.now().getYear())
+        if (year >= 1902 && year <= (LocalDate.now().getYear()+1))
         {
             this.year = year;
         }
