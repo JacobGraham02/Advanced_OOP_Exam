@@ -16,7 +16,7 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-        
+        new Thread(new HelloRunnable()).start();
         launch(args);
     }
 }
