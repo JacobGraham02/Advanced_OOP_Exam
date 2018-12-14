@@ -1,3 +1,4 @@
+// @author Nicholas Gardner, 200349007
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -37,6 +38,9 @@ public class Controller implements Initializable {
 
     private String brand = "";
 
+    /**
+     * runs when the GUI is launched
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
@@ -52,6 +56,9 @@ public class Controller implements Initializable {
         priceCol.setCellValueFactory(new PropertyValueFactory<Car, Double>("price"));
     }
 
+    /**
+     * repopulates the carsTable and the valueField based on the current selected brand
+     */
     public void popTable()
     {
         carsTable.getItems().addAll(carLot.getCars(brand));
@@ -66,12 +73,20 @@ public class Controller implements Initializable {
         valueField.setText(carLot.getInventoryValue(brand));
     }
 
+    /**
+     * clears the carsTable and calls popTable()
+     */
     public void reloadTable()
     {
         carsTable.getItems().clear();
         popTable();
     }
 
+    /**
+     * fires when the sellButton is pressed
+     * calls the sellCar() method in the carLot to "sell" a car
+     * calls reload table to update with the new information
+     */
     public void sellButtonPressed(ActionEvent actionEvent)
     {
         carLot.sellCar(carsTable.getSelectionModel().getSelectedItem());
@@ -79,6 +94,11 @@ public class Controller implements Initializable {
     }
 
 
+    /**
+     * fires when the brandSelect button is pressed
+     * sets the brand value to the current value of brandChoice
+     * calls reloadTable() to display the updated information
+     */
     public void brandselectPressed(ActionEvent actionEvent)
     {
         brand = brandChoice.getValue();

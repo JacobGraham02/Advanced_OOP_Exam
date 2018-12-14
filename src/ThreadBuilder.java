@@ -1,7 +1,7 @@
-import java.time.LocalDate;
+// @author Nicholas Gardner, 200349007
 import java.time.LocalDateTime;
 
-public class HelloRunnable implements Runnable {
+public class ThreadBuilder implements Runnable {
 
     private boolean loop = true;
 
