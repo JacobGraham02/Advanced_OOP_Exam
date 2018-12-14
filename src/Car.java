@@ -97,6 +97,25 @@ public class Car implements Comparable<Car>{
 
     @Override
     public int compareTo(Car o) {
-        return 0;
+        if (this.getBrand().compareToIgnoreCase(o.getBrand()) == 1)
+        {
+            return 1;
+        }
+        else if (this.getBrand().compareToIgnoreCase(o.getBrand()) == -1)
+        {
+            return -1;
+        }
+        else if (this.getModel().compareToIgnoreCase(o.getModel()) == 1)
+        {
+            return 1;
+        }
+        else if (this.getModel().compareToIgnoreCase(o.getModel()) == -1)
+        {
+            return -1;
+        }
+        else
+        {
+            return 0;
+        }
     }
 }
