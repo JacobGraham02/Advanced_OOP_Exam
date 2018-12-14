@@ -19,7 +19,6 @@ public class CarLot {
         if (brand == "All Brands")
         {
             TreeSet<Car> list = new TreeSet<>();
-            int i = 0;
             for(String str: carLot.keySet())
             {
                 list.addAll(carLot.get(str));
@@ -37,7 +36,7 @@ public class CarLot {
         carLot.get(car.getBrand()).remove(car);
     }
 
-    public double getInventoryValue(String brand)
+    public String getInventoryValue(String brand)
     {
         if (brand == "All Brands")
         {
@@ -46,11 +45,11 @@ public class CarLot {
             {
                 list.addAll(carLot.get(str));
             }
-            return list.stream().mapToDouble(car -> car.getPriceDouble()).sum();
+            return ""+list.stream().mapToDouble(car -> car.getPriceDouble()).sum();
         }
         else
         {
-            return carLot.get(brand).stream().mapToDouble(car -> car.getPriceDouble()).sum();
+            return ""+carLot.get(brand).stream().mapToDouble(car -> car.getPriceDouble()).sum();
         }
     }
 }
